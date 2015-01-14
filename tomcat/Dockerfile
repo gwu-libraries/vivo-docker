@@ -1,0 +1,15 @@
+FROM tomcat:8
+MAINTAINER Justin Littman <justinlittman@gwu.edu>
+
+RUN echo "tomcat            hard    nproc            1500\n" >> /etc/security/limits.conf
+ENV LC_ALL C.UTF-8
+RUN apt-get update && apt-get install -y \
+        python \
+        python-pip
+#Install prop_util to allow updating runtime.properties
+RUN mkdir /usr/local/vivo-install
+ADD prop_util /usr/local/vivo-install
+RUN pip install -r /usr/local/vivo-install/requirements.txt
+WORKDIR $CATALINA_HOME/bin
+CMD python /usr/local/vivo-install/prop_util.py /usr/local/vivo/home/runtime.properties $MYDOMAIN \
+    && ./catalina.sh run
