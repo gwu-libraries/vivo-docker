@@ -1,0 +1,6 @@
+@prefix gwlocal: <http://vivo.gwu.edu/ontology/local#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+gwlocal:InstitutionalInternal a owl:Class ;
+    rdfs:label "Institutional Internal"@en-US .
