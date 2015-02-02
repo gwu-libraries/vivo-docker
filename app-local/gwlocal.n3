@@ -1,6 +1,29 @@
 @prefix gwlocal: <http://vivo.gwu.edu/ontology/local#> .
-@prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vitro:   <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix vivoweb: <http://vivoweb.org/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+
+gwlocal: a owl:Ontology ;
+    rdfs:label "GWU Local Ontology"@en-US ;
+    vitro:ontologyPrefixAnnot
+              "gwlocal"^^xsd:string .
 
 gwlocal:InstitutionalInternal a owl:Class ;
     rdfs:label "Institutional Internal"@en-US .
+
+gwlocal:homeDept a owl:ObjectProperty ;
+    rdfs:domain  foaf:Person ;
+    rdfs:label "home department"@en-US ;
+    rdfs:range vivo:Department ;
+    vitro:inPropertyGroupAnnot vivoweb:vitroPropertyGroupaffiliation ;
+    owl:inverseOf gwlocal:homeDeptOf .
+
+gwlocal:homeDeptOf a owl:ObjectProperty ;
+    rdfs:range  foaf:Person ;
+    rdfs:label "home department of"@en-US ;
+    rdfs:domain vivo:Department ;
+    vitro:inPropertyGroupAnnot vivoweb:vitroPropertyGroupaffiliation .

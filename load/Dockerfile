@@ -12,4 +12,5 @@ RUN pip install rdflib
 RUN pip install xlrd
 ENV LC_ALL C.UTF-8
 WORKDIR /usr/local/vivo-load
+VOLUME ["/usr/local/vivo/graphs"]
 CMD pip install -r requirements.txt && httpd -DFOREGROUND
