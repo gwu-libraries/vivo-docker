@@ -19,21 +19,15 @@ Quick Start
 2.  [Install](http://www.fig.sh/install.html) Docker Compose (formerly Fig) >= 1.1.0.  (As of now, you have to use a [release candidate](https://github.com/docker/fig/releases).)
 3.  Fetch the docker-compose.yml:
 
-```
-curl -L https://github.com/gwu-libraries/vivo-docker/raw/master/example.docker-compose.yml > docker-compose.yml
-```      
+    curl -L https://github.com/gwu-libraries/vivo-docker/raw/master/example.docker-compose.yml > docker-compose.yml
 
 4.  Set your domain:
 
-```
-export MYDOMAIN=gwu.edu
-```
+    export MYDOMAIN=gwu.edu
 
 5.  Up:
 
-```
-git-compose up -d
-```
+    git-compose up -d
 
 6.  Wait.  The first time you run, you'll need to wait for the Docker images to download.  Every time you run, you'll need to wait for VIVO to start, which can take several minutes (or more).  Open a browser to http://localhost:8080/vivo.  You can log in with email vivo_root@MYDOMAIN (e.g., vivo_root@gwu.edu) and password "rootPassword".  (You'll be prompted to change the password.)
 
