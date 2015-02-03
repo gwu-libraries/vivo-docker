@@ -19,16 +19,27 @@ Quick Start
 2.  [Install](http://www.fig.sh/install.html) Docker Compose (formerly Fig) >= 1.1.0.  (As of now, you have to use a [release candidate](https://github.com/docker/fig/releases).)
 3.  Fetch the docker-compose.yml:
 
-curl -L https://github.com/gwu-libraries/vivo-docker/raw/master/docker-compose.yml > docker-compose.yml
-curl -L https://github.com/gwu-libraries/vivo-docker/raw/master/example.env.list > env.list
+```
+curl -L https://github.com/gwu-libraries/vivo-docker/raw/master/example.docker-compose.yml > docker-compose.yml
+```      
+
 4.  Set your domain:
+
+```
 export MYDOMAIN=gwu.edu
+```
+
 5.  Up:
 
+```
+git-compose up -d
+```
+
+6.  Wait.  The first time you run, you'll need to wait for the Docker images to download.  Every time you run, you'll need to wait for VIVO to start, which can take several minutes (or more).  Open a browser to http://localhost:8080/vivo.  You can log in with email vivo_root@MYDOMAIN (e.g., vivo_root@gwu.edu) and password "rootPassword".  (You'll be prompted to change the password.)
 
 Building images
 ===============
-Each container provides a script named `build.sh` to build an image.  In addition, app. db, and tomcat are automatically built by Docker Hub.
+Each container provides a script named `build.sh` to build an image.  In addition, app, db, and tomcat are automatically built by Docker Hub.
 
 Running containers
 ==================
@@ -41,10 +52,10 @@ Container-specific notes
 
 ### app container:
 
-* Before instantiating the db container, wait for the app container to complete
-compiling and deploying the VIVO application. Once completed, the app container
-will stop running.  (Thus, while running it is listed by `docker ps`. Once
-completed, it is only listed by `docker ps -a`).
+* The app container can be extended with local configuration.  See app-local as an example for how it is extended at GWU.
+* Host the volumes:
+    * /usr/local/tomcat/webapps
+    * /usr/local/vivo/home
 
 ### tomcat app:
 
