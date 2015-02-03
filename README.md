@@ -6,13 +6,29 @@ This project contains code for dockerizing [VIVO](http://vivoweb.org).
 In particular, it supports creating the following containers:
 
 * app:  Compiles and deploys the VIVO application.
+* app-local:  Extends app with GWU specific configuration, including a local ontology.  This can be used as an example for extending the app image for local setting (although the app image can be used by itself without extension).
 * db:  Instantiates a MySQL db.
 * tomcat:  Instantiates an instance of Tomcat for the app to run in.
 * load:  Provides an environment for loading VIVO.
 
+[app](https://registry.hub.docker.com/u/gwul/vivo_app/), [db](https://registry.hub.docker.com/u/gwul/vivo_db/), and [tomcat](https://registry.hub.docker.com/u/gwul/vivo_tomcat/) are available from Docker Hub.
+
+Quick Start
+=========
+1.  [Install](https://docs.docker.com/installation/#installation) Docker >= 1.3.
+2.  [Install](http://www.fig.sh/install.html) Docker Compose (formerly Fig) >= 1.1.0.  (As of now, you have to use a [release candidate](https://github.com/docker/fig/releases).)
+3.  Fetch the docker-compose.yml:
+
+curl -L https://github.com/gwu-libraries/vivo-docker/raw/master/docker-compose.yml > docker-compose.yml
+curl -L https://github.com/gwu-libraries/vivo-docker/raw/master/example.env.list > env.list
+4.  Set your domain:
+export MYDOMAIN=gwu.edu
+5.  Up:
+
+
 Building images
 ===============
-Each container provides a script named `build.sh` to build an image.
+Each container provides a script named `build.sh` to build an image.  In addition, app. db, and tomcat are automatically built by Docker Hub.
 
 Running containers
 ==================

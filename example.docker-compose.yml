@@ -1,8 +1,13 @@
 vivoapp:
-    image: gwul/vivo_app_local
+    image: gwul/vivo_app
 vivodb:
     image: gwul/vivo_db
     env_file: env.list
+    environment:
+        - MYSQL_ROOT_PASSWORD: GHr54sfflsETT34
+        - MYSQL_DATABASE: vivo
+        - MYSQL_USER: vivo_user
+        - MYSQL_PASSWORD: ghE35fkEm4dfe3
 vivotomcat:
     image: gwul/vivo_tomcat
     volumes_from:
