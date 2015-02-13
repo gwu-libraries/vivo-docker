@@ -37,7 +37,8 @@ Each container provides a script named `build.sh` to build an image.  In additio
 
 Running containers
 ==================
-Each container provides a script named `container.sh` to instantiate a container.
+The recommended approach to starting containers is to use Docker Compose.  
+However, each container provides a script named `container.sh` to instantiate a container.
 
 Containers should be instantiated in the following order: app, db, tomcat, load.
 
@@ -54,13 +55,15 @@ Container-specific notes
 ### tomcat app:
 
 * Complete control is available over VIVO's runtime properties.  At the very
-least, your domain must be provided in `container.sh`.  Additional runtime
-properties can be overridden by providing as environment variables.  See
-tomcat/prop_util/prop_util.py.
+least, your domain must be provided as the MYDOMAIN environment variable.  
+Additional runtime properties can be overridden by providing as environment
+variables.  See tomcat/prop_util/prop_util.py.
+* Tomcat's memory can be set using the CATALINA_OPTS environment variable.
 * Starting up the VIVO application in Tomcat takes a long time.  As in several
 excruciating minutes.
 * Once the VIVO application is running, you will be required to change the root
-password.  The default username is "vivo_root@yourinstitution.edu" and password is "rootPassword".
+password.  The default username is "vivo_root@yourinstitution.edu" and password
+is "rootPassword".
 * VIVO performs a series of smoke tests when starting up.  You may be warned if
 SMTP is not available for sending email.
 

@@ -17,3 +17,4 @@ vivotomcat:
         - vivodb:db
     environment:
         - MYDOMAIN
+        - CATALINA_OPTS=-Xmx2048m -XX:MaxPermSize=128m

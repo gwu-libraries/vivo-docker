@@ -1,7 +1,6 @@
 FROM tomcat:8
 MAINTAINER Justin Littman <justinlittman@gwu.edu>
 
-RUN echo "tomcat            hard    nproc            1500\n" >> /etc/security/limits.conf
 ENV LC_ALL C.UTF-8
 RUN apt-get update && apt-get install -y \
         python \
