@@ -11,3 +11,12 @@ d:root a auth:UserAccount ;
     auth:md5password "5F4DCC3B5AA765D61D8327DEB882CF99" ;
     auth:passwordLinkExpires "0" ;
     auth:status "ACTIVE" .
+
+d:guest a auth:UserAccount ;
+    auth:emailAddress "vivo_api@gwu.edu" ;
+    auth:firstName "api" ;
+    auth:lastName "user" ;
+    auth:md5password "5F4DCC3B5AA765D61D8327DEB882CF99" ;
+    auth:passwordLinkExpires "0" ;
+    auth:status "ACTIVE" ;
+    auth:hasPermissionSet auth:API .

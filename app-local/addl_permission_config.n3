@@ -1,0 +1,10 @@
+@prefix auth: <http://vitro.mannlib.cornell.edu/ns/vitro/authorization#> .
+@prefix simplePermission: <java:edu.cornell.mannlib.vitro.webapp.auth.permissions.SimplePermission#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+auth:API
+    a auth:PermissionSet ;
+    rdfs:label "API" ;
+
+    # Authorize the API role to use the SPARQL Query API
+    auth:hasPermission simplePermission:UseSparqlQueryApi .
