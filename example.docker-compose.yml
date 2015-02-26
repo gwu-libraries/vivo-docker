@@ -7,6 +7,7 @@ vivodb:
         - MYSQL_DATABASE=vivo
         - MYSQL_USER=vivo_user
         - MYSQL_PASSWORD=ghE35fkEm4dfe3
+    restart: always
 vivotomcat:
     image: gwul/vivo_tomcat
     volumes_from:
@@ -18,3 +19,4 @@ vivotomcat:
     environment:
         - MYDOMAIN
         - CATALINA_OPTS=-Xmx2048m -XX:MaxPermSize=128m
+    restart: always
