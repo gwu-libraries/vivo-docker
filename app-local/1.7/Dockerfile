@@ -1,4 +1,4 @@
-FROM gwul/vivo_app
+FROM gwul/vivo_app:1.7
 MAINTAINER Justin Littman <justinlittman@gwu.edu>
 
 ADD gwlocal.n3 /tmp/vivo-rel-1.7/rdf/tbox/filegraph/

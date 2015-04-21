@@ -1,7 +1,7 @@
 vivoapp:
     image: gwul/vivo_app:1.7
 vivodb:
-    image: gwul/vivo_db:1.7
+    image: gwul/vivo_db
     environment:
         - MYSQL_ROOT_PASSWORD=Hr54sfflsETT34
         - MYSQL_DATABASE=vivo
@@ -9,7 +9,7 @@ vivodb:
         - MYSQL_PASSWORD=ghE35fkEm4dfe3
     restart: always
 vivotomcat:
-    image: gwul/vivo_tomcat:1.7
+    image: gwul/vivo_tomcat
     volumes_from:
         - vivoapp
     ports:

@@ -1,0 +1,22 @@
+vivoapp:
+    image: gwul/vivo_app:1.8
+vivodb:
+    image: gwul/vivo_db
+    environment:
+        - MYSQL_ROOT_PASSWORD=Hr54sfflsETT34
+        - MYSQL_DATABASE=vivo
+        - MYSQL_USER=vivo_user
+        - MYSQL_PASSWORD=ghE35fkEm4dfe3
+    restart: always
+vivotomcat:
+    image: gwul/vivo_tomcat
+    volumes_from:
+        - vivoapp
+    ports:
+        - "8080:8080"
+    links:
+        - vivodb:db
+    environment:
+        - MYDOMAIN
+        - CATALINA_OPTS=-Xmx2048m -XX:MaxPermSize=128m
+    restart: always
