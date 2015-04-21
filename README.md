@@ -16,10 +16,10 @@ In particular, it supports creating the following containers:
 Quick Start
 =========
 1.  [Install](https://docs.docker.com/installation/#installation) Docker >= 1.3.
-2.  [Install](http://www.fig.sh/install.html) Docker Compose (formerly Fig) >= 1.1.0.  (As of now, you have to use a [release candidate](https://github.com/docker/fig/releases).)
+2.  [Install](http://docs.docker.com/compose/install/) Docker Compose (formerly Fig) >= 1.1.0. 
 3.  Fetch the docker-compose.yml:
 
-    curl -L https://github.com/gwu-libraries/vivo-docker/raw/master/example.docker-compose.yml > docker-compose.yml
+    curl -L https://github.com/gwu-libraries/vivo-docker/raw/master/example.1_7.docker-compose.yml > docker-compose.yml
 
 4.  Set your domain:
 
@@ -31,16 +31,9 @@ Quick Start
 
 6.  Wait.  The first time you run, you'll need to wait for the Docker images to download.  Every time you run, you'll need to wait for VIVO to start, which can take several minutes (or more).  Open a browser to http://localhost:8080/vivo.  You can log in with email vivo_root@MYDOMAIN (e.g., vivo_root@gwu.edu) and password "rootPassword".  (You'll be prompted to change the password.)
 
-Building images
-===============
-Each container provides a script named `build.sh` to build an image.  In addition, app, db, and tomcat are automatically built by Docker Hub.
-
 Running containers
 ==================
 The recommended approach to starting containers is to use Docker Compose.  
-However, each container provides a script named `container.sh` to instantiate a container.
-
-Containers should be instantiated in the following order: app, db, tomcat, load.
 
 Container-specific notes
 ========================
