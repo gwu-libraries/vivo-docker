@@ -5,12 +5,12 @@ RUN apt-get update && apt-get install -y \
     ant
 WORKDIR /tmp
 #Getting VIVO separately from VITRO
-RUN wget https://github.com/vivo-project/VIVO/archive/rel-1.8-rc2.zip
+RUN wget https://github.com/vivo-project/VIVO/archive/rel-1.8.zip
 RUN unzip rel-1.8*.zip
-RUN wget https://github.com/vivo-project/Vitro/archive/rel-1.8-rc2.zip
+RUN wget https://github.com/vivo-project/Vitro/archive/rel-1.8.zip
 RUN unzip rel-1.8*.zip.1
-RUN mv VIVO-rel-1.8-rc2 VIVO-rel
-RUN mv Vitro-rel-1.8-rc2 VIVO-rel/vitro-core
+RUN mv VIVO-rel-1.8 VIVO-rel
+RUN mv Vitro-rel-1.8 VIVO-rel/vitro-core
 WORKDIR /tmp/VIVO-rel
 ADD build.properties /tmp/VIVO-rel/
 VOLUME ["/usr/local/tomcat/webapps","/usr/local/vivo/home"]
