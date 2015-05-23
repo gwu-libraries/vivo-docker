@@ -18,5 +18,6 @@ vivotomcat:
         - vivodb:db
     environment:
         - MYDOMAIN
+        - VIVO_EMAIL
         - CATALINA_OPTS=-Xmx2048m -XX:MaxPermSize=128m
     restart: always
