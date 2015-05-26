@@ -22,6 +22,11 @@ if __name__ == '__main__':
         new_value = value.replace("mydomain.edu", newdomain)
         print "Changing key %s from %s to %s" % (key, value, new_value)
         p[key] = new_value
+    #Only set email keys if env var present.
+    if os.environ.get('VIVO_EMAIL', False) != "true":
+        print "Removing email settings."
+        p['email.smtpHost'] = ""
+        p['email.replyTo'] = ""
     #Set DB values based on docker-provided environment variables
     p['VitroConnection.DataSource.url'] = "jdbc:mysql://db/%s" % os.getenv('DB_ENV_MYSQL_DATABASE')
     p['VitroConnection.DataSource.username'] = os.getenv('DB_ENV_MYSQL_USER')
