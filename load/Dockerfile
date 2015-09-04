@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
     python-pip \
     lib32z1-dev \
     libxml2-dev \
-    libxslt1-dev
+    libxslt1-dev \
+    git
 #Upgrade pip
 RUN pip install -U pip
 #Preload requirements. Will need a better way to do this.
