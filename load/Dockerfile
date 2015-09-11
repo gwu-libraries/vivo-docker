@@ -11,10 +11,10 @@ RUN apt-get update && apt-get install -y \
     git
 #Upgrade pip
 RUN pip install -U pip
-#Preload requirements. Will need a better way to do this.
-RUN pip install rdflib
-RUN pip install xlrd
+#This pre-fetches the most recent requirements.txt.
+ADD https://github.com/gwu-libraries/vivo-load/raw/master/requirements.txt /tmp/
+RUN pip install -r /tmp/requirements.txt
 ENV LC_ALL C.UTF-8
 WORKDIR /usr/local/vivo-load
 VOLUME ["/usr/local/vivo/graphs"]
-CMD pip install -r requirements.txt && httpd -DFOREGROUND
+CMD pip install -r requirements.txt --upgrade && httpd -DFOREGROUND
