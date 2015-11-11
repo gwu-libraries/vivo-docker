@@ -1,0 +1,22 @@
+@prefix d: <http://vivo.gwu.edu/individual/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix vitro: <http://vitro.mannlib.cornell.edu/default/> .
+@prefix auth: <http://vitro.mannlib.cornell.edu/ns/vitro/authorization#> .
+
+d:root a auth:UserAccount ;
+    a auth:RootUserAccount ;
+    auth:emailAddress "vivo_root@gwu.edu" ;
+    auth:firstName "root" ;
+    auth:lastName "user" ;
+    auth:md5password "5F4DCC3B5AA765D61D8327DEB882CF99" ;
+    auth:passwordLinkExpires "0" ;
+    auth:status "ACTIVE" .
+
+d:guest a auth:UserAccount ;
+    auth:emailAddress "vivo_api@gwu.edu" ;
+    auth:firstName "api" ;
+    auth:lastName "user" ;
+    auth:md5password "5F4DCC3B5AA765D61D8327DEB882CF99" ;
+    auth:passwordLinkExpires "0" ;
+    auth:status "ACTIVE" ;
+    auth:hasPermissionSet auth:API .

@@ -15,11 +15,11 @@ In particular, it supports creating the following containers:
 
 Quick Start
 =========
-1.  [Install](https://docs.docker.com/installation/#installation) Docker >= 1.3.
-2.  [Install](http://docs.docker.com/compose/install/) Docker Compose (formerly Fig) >= 1.1.0. 
+1.  [Install](https://docs.docker.com/installation/#installation) Docker.
+2.  [Install](http://docs.docker.com/compose/install/) Docker Compose. 
 3.  Fetch the docker-compose.yml:
 
-    curl -L https://github.com/gwu-libraries/vivo-docker/raw/master/example.1_7.docker-compose.yml > docker-compose.yml
+    curl -L https://github.com/gwu-libraries/vivo-docker/raw/master/example.1_8_1.docker-compose.yml > docker-compose.yml
 
 4.  Set your domain:
 

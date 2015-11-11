@@ -1,2 +1,3 @@
 env.list
 docker-compose*.yml
+.idea/
