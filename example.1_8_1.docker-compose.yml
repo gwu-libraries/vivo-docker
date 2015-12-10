@@ -1,5 +1,5 @@
 vivoapp:
-    image: gwul/vivo_app:1.8
+    image: gwul/vivo_app:1.8.1
 vivodb:
     image: gwul/vivo_db
     environment:
