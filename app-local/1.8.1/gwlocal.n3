@@ -6,6 +6,7 @@
 @prefix vivoweb: <http://vivoweb.org/ontology#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 
 gwlocal: a owl:Ontology ;
     rdfs:label "GWU Local Ontology"@en-US ;
@@ -27,3 +28,76 @@ gwlocal:homeDeptOf a owl:ObjectProperty ;
     rdfs:label "home department of"@en-US ;
     rdfs:domain vivo:Department ;
     vitro:inPropertyGroupAnnot vivoweb:vitroPropertyGroupaffiliation .
+
+gwlocal:mediaMentions a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:range  foaf:Person ;
+    rdfs:label "media mentions"@en-US ;
+    vitro:displayLimitAnnot
+          "1"^^xsd:int ;
+    vitro:displayRankAnnot
+          "10"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromPublishBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:inPropertyGroupAnnot
+          <http://vivoweb.org/ontology#vitroPropertyGroupoverview> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:publicDescriptionAnnot
+          "A short narrative summary of media mentions."^^xsd:string .
+
+gwlocal:commentary a owl:DatatypeProperty, owl:FunctionaProperty ;
+    rdfs:range  foaf:Person ;
+    rdfs:label "commentary"@en-US ;
+    vitro:displayLimitAnnot
+          "1"^^xsd:int ;
+    vitro:displayRankAnnot
+          "10"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromPublishBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:inPropertyGroupAnnot
+          <http://vivoweb.org/ontology#vitroPropertyGroupoverview> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:publicDescriptionAnnot
+          "A short narrative summary of commentary."^^xsd:string .
+
+gwlocal:multimedia a owl:ObjectProperty ;
+    rdfs:domain foaf:Person ;
+    rdfs:label "multimedia"@en-US ;
+    rdfs:range bibo:Document ;
+    vitro:displayLimitAnnot
+          "1"^^xsd:int ;
+    vitro:displayRankAnnot
+          "10"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromPublishBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:inPropertyGroupAnnot
+          <http://vivoweb.org/ontology#vitroPropertyGroupoverview> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:publicDescriptionAnnot
+          "A multimedia item featuring this person."^^xsd:string ;
+    owl:inverseOf gwlocal:multimediaOf .
+
+gwlocal:multimediaOf a owl:ObjectProperty ;
+    rdfs:range foaf:Person ;
+    rdfs:domain bibo:Document ;
+    rdfs:label "multimedia of"@en-US ;
+    vitro:displayLimitAnnot
+          "1"^^xsd:int ;
+    vitro:displayRankAnnot
+          "10"^^xsd:int ;
+    vitro:hiddenFromDisplayBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:hiddenFromPublishBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> ;
+    vitro:inPropertyGroupAnnot
+          <http://vivoweb.org/ontology#vitroPropertyGroupoverview> ;
+    vitro:prohibitedFromUpdateBelowRoleLevelAnnot
+          <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
