@@ -1,4 +1,4 @@
-@prefix gwlocal: <http://vivo.gwu.edu/ontology/local#> .
+@prefix gwlocal: <https://expert.gwu.edu/ontology/local#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vitro:   <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
@@ -101,3 +101,7 @@ gwlocal:multimediaOf a owl:ObjectProperty ;
           <http://vivoweb.org/ontology#vitroPropertyGroupoverview> ;
     vitro:prohibitedFromUpdateBelowRoleLevelAnnot
           <http://vitro.mannlib.cornell.edu/ns/vitro/role#public> .
+
+gwlocal:normalOrderName a owl:DatatypeProperty ;
+    rdfs:domain  foaf:Person ;
+    rdfs:label "name"@en-US .
